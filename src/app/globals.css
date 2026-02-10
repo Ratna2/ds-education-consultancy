@@ -1,0 +1,311 @@
+@import "tailwindcss";
+
+/* Light mode (default) */
+:root {
+  --background: #f8fafc; /* light slate */
+  --foreground: #0f172a; /* dark readable text */
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617; /* dark slate */
+    --foreground: #e5e7eb; /* light text */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* ---------- Top Bar Marquee Animation ---------- */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+input, textarea {
+  color: #0f172a; /* slate-900 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b; /* slate-500 */
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 22s linear infinite;
+}
+
+/* Fix invisible text issue */
+input, textarea {
+  color: #000;
+  background-color: #fff;
+}
+
+::placeholder {
+  color: #6b7280;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite;
+}
+/* TEXT ANIMATION (real animation, no cursor) */
+.animated-text {
+  display: inline-block;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0);
+    filter: drop-shadow(0 0 4px rgba(34,197,94,0.4));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 14px rgba(34,197,94,0.9));
+  }
+}
+
+/* IMAGE FLOATING / BUBBLE ANIMATION */
+.floating-image {
+  animation: floatBubble 6s ease-in-out infinite;
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+/* REPEATING TYPING EFFECT */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(255, 255, 255, 0.8);
+
+  animation:
+    typing 3s steps(20, end) infinite,
+    blink 0.8s step-end infinite;
+}
+
+/* typing in + clearing */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* blinking cursor */
+@keyframes blink {
+  0%, 50%, 100% {
+    border-color: transparent;
+  }
+  25%, 75% {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-wordReveal {
+  animation: wordReveal 0.6s ease-out forwards;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-popup {
+  animation: popup 0.4s ease-out;
+}
+.dashboard-card {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.dashboard-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+.dashboard-card {
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem;
+}
+
+.dashboard-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes floatBlob {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-40px) translateX(20px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: floatBlob 12s infinite ease-in-out;
+}
+.smooth-hover {
+  transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #6366f1,
+    #8b5cf6,
+    #ec4899,
+    #22d3ee
+  );
+  background-size: 600% 600%;
+  animation: gradientShift 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+
+.card-3d:hover {
+  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
