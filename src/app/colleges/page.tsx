@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useMemo, useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 
 type College = {
   name: string;
@@ -32,19 +31,10 @@ const colleges: College[] = [
 const ITEMS_PER_PAGE = 6;
 
 function CollegesContent() {
-  const searchParams = useSearchParams();
-  const categoryFromURL = searchParams.get("category");
 
   const [active, setActive] = useState("All");
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    if (categoryFromURL) {
-      setActive(categoryFromURL);
-      setPage(1);
-    }
-  }, [categoryFromURL]);
 
   const filtered = useMemo(() => {
     let result =
