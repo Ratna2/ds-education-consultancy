@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 type College = {
@@ -12,22 +12,18 @@ type College = {
 };
 
 const colleges: College[] = [
-  // LAW
   { name: "Uttaranchal University, Dehradun", category: "Law", image: "/uttaranchal.jpg", featured: true },
   { name: "SAGE University, Bhopal", category: "Law", image: "/sage.jpg" },
   { name: "Adamas University, Kolkata", category: "Law", image: "/adamas.jpg" },
 
-  // MEDICAL
   { name: "SRM University, Delhi", category: "Medical", image: "/srm.jpg", featured: true },
   { name: "East Point College Of Medical Sciences", category: "Medical", image: "/eastpoint.jpg" },
   { name: "Kalinga Institute Of Medical Sciences", category: "Medical", image: "/kalinga.jpg" },
 
-  // MANAGEMENT
   { name: "Indo Global Group Of Colleges Punjab", category: "Management", image: "/indoglobal.jpg" },
   { name: "UPES University, Dehradun", category: "Management", image: "/upes.jpg", featured: true },
   { name: "MIT World Peace University", category: "Management", image: "/mit.jpg" },
 
-  // ENGINEERING
   { name: "Roorkee College Of Engineering", category: "Engineering", image: "/roorkee.jpg" },
   { name: "Brainware University, Kolkata", category: "Engineering", image: "/brainware.jpg" },
   { name: "Graphic Era Hill University", category: "Engineering", image: "/graphicera.jpg", featured: true },
@@ -35,7 +31,7 @@ const colleges: College[] = [
 
 const ITEMS_PER_PAGE = 6;
 
-export default function CollegesPage() {
+function CollegesContent() {
   const searchParams = useSearchParams();
   const categoryFromURL = searchParams.get("category");
 
@@ -77,7 +73,6 @@ export default function CollegesPage() {
 
       {/* HERO */}
       <section className="relative py-24 text-center overflow-hidden">
-
         <div className="relative">
           <div className="inline-block px-5 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-6 animate-bounce">
             🎓 Explore Institutions
@@ -206,5 +201,13 @@ export default function CollegesPage() {
         }
       `}</style>
     </div>
+  );
+}
+
+export default function CollegesPage() {
+  return (
+    <Suspense fallback={<div className="p-20 text-center">Loading...</div>}>
+      <CollegesContent />
+    </Suspense>
   );
 }
