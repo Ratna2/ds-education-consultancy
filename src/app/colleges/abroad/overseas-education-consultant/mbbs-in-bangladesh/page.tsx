@@ -762,7 +762,7 @@ export default function MBBSBangladesh() {
         <div className="max-w-6xl mx-auto px-6 text-center">
 
             {/* Animated Gradient Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white-300 via-white to-white-300 bg-clip-text text-transparent animate-pulse">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white-300 via-white to-white-300 bg-clip-text text-transparent animate-pulse">
             Need Help With Admissions?
             </h2>
 

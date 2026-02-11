@@ -18,7 +18,7 @@ export default function AboutPage() {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             A Little <span className="text-indigo-600">About Us</span>
           </h1>
         </ScrollReveal>

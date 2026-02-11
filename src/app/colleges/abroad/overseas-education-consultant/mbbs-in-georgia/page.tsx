@@ -520,7 +520,7 @@ export default function MBBSRussia() {
           <div className="max-w-6xl mx-auto px-6">
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14 
             bg-gradient-to-r from-red-700 via-red-500 to-red-700 
             bg-clip-text text-transparent">
               Fee Structure & Accomodation cost
@@ -614,7 +614,7 @@ export default function MBBSRussia() {
 
             {/* Heading */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-red-700">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-700">
                 Scholarships & Education Loans
               </h2>
               <div className="w-24 h-1 bg-red-600 mx-auto mt-4 rounded-full"></div>
@@ -733,7 +733,7 @@ export default function MBBSRussia() {
 
           {/* Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-red-700">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-700">
               Career Opportunities After MBBS
             </h2>
             <div className="w-24 h-1 bg-red-600 mx-auto mt-4 rounded-full"></div>
