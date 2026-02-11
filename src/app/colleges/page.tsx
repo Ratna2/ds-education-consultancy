@@ -119,7 +119,7 @@ function CollegesContent() {
       {/* GRID */}
       <div
         key={active + page + search}
-        className="container-custom grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeIn"
+        className="container-custom grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeIn"
       >
         {paginated.map((college, i) => (
           <div
@@ -183,6 +183,7 @@ function CollegesContent() {
 }
 
 export default function CollegesPage() {
-  return 
+  return (
       <CollegesContent />
+  );
 }
