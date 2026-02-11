@@ -70,7 +70,7 @@ function CollegesContent() {
             🎓 Explore Institutions
           </div>
 
-          <h1 className="text-5xl font-bold text-slate-800">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800">
             University & Colleges
           </h1>
 
@@ -118,7 +118,7 @@ function CollegesContent() {
       {/* GRID */}
       <div
         key={active + page + search}
-        className="container-custom grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade"
+        className="container-custom grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeIn"
       >
         {paginated.map((college, i) => (
           <div
@@ -176,22 +176,7 @@ function CollegesContent() {
         </div>
       )}
 
-      <style jsx>{`
-        .animate-fade {
-          animation: fade 0.4s ease;
-        }
-
-        @keyframes fade {
-          from {
-            opacity: 0;
-            transform: translateY(15px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+    
     </div>
   );
 }
