@@ -1,215 +1,188 @@
-"use client";
+<section className="py-20 bg-white">
+        <div className="container-custom">
 
-import ScrollReveal from "@/components/ScrollReveal";
-
-export default function UniversityFees() {
-  const fees = [
-    {
-      university: "CT University",
-      state: "Punjab",
-      location: "Ludhiana, Punjab",
-      course: "B.Tech CSE",
-      duration: "4 Years",
-      annual: "₹1,90,000",
-      total: "₹7,60,000",
-    },
-    {
-      university: "Noida International University",
-      state: "Uttar Pradesh",
-      location: "Greater Noida, UP",
-      course: "MBA",
-      duration: "2 Years",
-      annual: "₹1,98,350",
-      total: "₹3,96,000",
-    },
-    {
-      university: "KIIT University",
-      state: "Odisha",
-      location: "Bhubaneswar, Odisha",
-      course: "B.Tech CSE",
-      duration: "4 Years",
-      annual: "₹3,50,000",
-      total: "₹14,00,000",
-    },
-    {
-      university: "Ambuja Neotia University",
-      state: "West Bengal",
-      location: "Kolkata, WB",
-      course: "BBA",
-      duration: "3 Years",
-      annual: "₹90,000",
-      total: "₹2,70,000",
-    },
-    {
-      university: "SAGE University",
-      state: "Madhya Pradesh",
-      location: "Indore, MP",
-      course: "B.Tech AI",
-      duration: "4 Years",
-      annual: "₹1,10,000",
-      total: "₹4,40,000",
-    },
-    {
-      university: "PTLR College of Pharmacy",
-      state: "Haryana",
-      location: "Faridabad, Haryana",
-      course: "D Pharma",
-      duration: "2 Years",
-      annual: "₹1,00,000",
-      total: "₹2,00,000",
-    },
-    {
-      university: "ICARE Institute of Medical Sciences",
-      state: "West Bengal",
-      location: "Haldia, West Bengal",
-      course: "D Pharma",
-      duration: "3 Years",
-      annual: "₹19,00,000",
-      total: "₹85,50,000",
-    },
-    {
-      university: "Brainware University",
-      state: "West Bengal",
-      location: "Kolkata, WB",
-      course: "BCA",
-      duration: "3 Years",
-      annual: "₹75,000",
-      total: "₹2,25,000",
-    },
-    {
-      university: "Graphic Era Institute of Medical Sciences",
-      state: "Uttarakhand",
-      location: "Dehradun, UK",
-      course: "MBBS",
-      duration: "4.5 Years",
-      annual: "₹22,00,000",
-      total: "₹99,00,000",
-    },
-    {
-      university: "Ramaiah Medical College",
-      state: "Karnataka",
-      location: "Bangalore, KA",
-      course: "MBBS",
-      duration: "4.5 Years",
-      annual: "₹25,00,000",
-      total: "₹1,12,50,000",
-    },
-    {
-      university: "Shiksha O Anusandhan",
-      state: "Odisha",
-      location: "Bhubaneswar, Odisha",
-      course: "B.Tech AIML",
-      duration: "4 Years",
-      annual: "₹3,05,000",
-      total: "₹12,20,000",
-    },
-  ];
-
-  return (
-    <section className="py-32 bg-slate-50">
-      <div className="container-custom">
-
-        {/* Heading */}
-        <ScrollReveal>
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-              University Fee Structure
+            {/* Heading */}
+            <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#006A4E] tracking-tight">
+                MBBS in Bangladesh Fee Structure
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Compare fees across top universities in India to make
-              an informed decision about your education.
+            <p className="text-slate-500 mt-3 text-sm md:text-base">
+                Tuition & Living Cost Overview (5-Year Program)
             </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full" />
-          </div>
-        </ScrollReveal>
-
-        {/* Table */}
-        <ScrollReveal delay={100}>
-          <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
-
-            {/* Header */}
-            <div className="grid grid-cols-6 bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-sm font-semibold px-8 py-4">
-              <div>University</div>
-              <div>Location</div>
-              <div>Course</div>
-              <div>Duration</div>
-              <div>Annual Fee</div>
-              <div>Total Fee</div>
             </div>
 
-            {/* Rows */}
-            {fees.map((item, index) => (
-              <div
-                key={index}
-                className="grid grid-cols-1 grid grid-cols-2 grid grid-cols-3 px-8 py-5 border-b hover:bg-blue-50 transition text-sm items-center"
-              >
-                <div>
-                  <p className="font-semibold text-slate-800">
-                    {item.university}
-                  </p>
-                  <p className="text-slate-500 text-xs">
-                    {item.state}
-                  </p>
-                </div>
+            {/* Table */}
+            <div className="overflow-x-auto rounded-xl shadow-md border border-slate-200">
 
-                <div className="text-slate-600">
-                  {item.location}
-                </div>
+            <table className="min-w-full text-sm text-left">
 
-                <div>
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">
-                    {item.course}
-                  </span>
-                </div>
+                {/* Table Head */}
+                <thead className="bg-[#006A4E] text-white">
+                <tr>
+                    <th className="px-6 py-4 font-semibold">University / College</th>
+                    <th className="px-6 py-4 font-semibold text-center">Total Tuition Fee (5 Years)</th>
+                    <th className="px-6 py-4 font-semibold text-center">First Year Fee</th>
+                    <th className="px-6 py-4 font-semibold text-center">2nd–5th Year Fee</th>
+                    <th className="px-6 py-4 font-semibold text-center">Hostel / Month</th>
+                    <th className="px-6 py-4 font-semibold text-center">Mess / Month</th>
+                </tr>
+                </thead>
 
-                <div className="text-slate-600">
-                  {item.duration}
-                </div>
+                {/* Table Body */}
+                <tbody className="divide-y divide-slate-200">
 
-                <div className="font-medium text-slate-800">
-                  {item.annual}
-                </div>
+                {[
+                    ["Khulna City Medical College", "$40,000", "$12,000", "$28,000", "$75", "$75"],
+                    ["Rangpur Community Medical College", "$43,950", "$19,950", "$24,000", "Included", "$50"],
+                    ["Shahabuddin Medical College", "$47,000", "$27,000", "$20,000", "-", "-"],
+                    ["Marks Medical College", "$38,000", "$15,000", "$23,000", "Included", "$50"],
+                    ["Parkview Medical College", "$35,000", "$10,000", "$25,000", "$100", "$50"],
+                    ["Barind Medical College", "$38,000", "$11,000", "$27,000", "Included", "$60"],
+                    ["City Medical College", "$39,000", "$17,000", "$22,000", "Included", "$50"],
+                    ["Faridpur Diabetic Medical College", "$42,000", "$31,000", "$11,000", "Included", "$50"],
+                    ["Universal Medical College", "$42,000", "$20,000", "$22,000", "Included", "$50"],
+                    ["Bikrampur Bhuiyan Medical College", "$32,000", "$12,000", "$20,000", "$50", "$50"],
+                    ["International Medical College", "$44,000", "$18,000", "$26,000", "Included", "$60"],
+                    ["Uttara Women's Medical College", "$46,000", "$16,000", "$30,000", "$130", "$50"],
+                    ["Dhaka National Medical College", "$53,000", "$35,000", "$18,000", "$50", "$50"],
+                    ["Popular Medical College", "$45,000", "$20,000", "$25,000", "Included", "$50"],
+                    ["Tairunnessa Medical College", "$43,000", "$15,000", "$28,000", "Included", "$60"],
+                    ["IBN Sina Medical College", "$40,000", "$21,000", "$19,000", "$100", "$50"],
+                    ["Delta Medical College", "$44,200", "$15,200", "$29,000", "Included", "$60"],
+                    ["TMSS Medical College", "$44,000", "$18,000", "$26,000", "Included", "Included"],
+                ].map((row, index) => (
+                    <tr
+                    key={index}
+                    className="hover:bg-slate-50 transition"
+                    >
+                    <td className="px-6 py-4 font-medium text-slate-700">
+                        {row[0]}
+                    </td>
+                    <td className="px-6 py-4 text-center text-slate-600">{row[1]}</td>
+                    <td className="px-6 py-4 text-center text-slate-600">{row[2]}</td>
+                    <td className="px-6 py-4 text-center text-slate-600">{row[3]}</td>
+                    <td className="px-6 py-4 text-center text-slate-600">{row[4]}</td>
+                    <td className="px-6 py-4 text-center text-slate-600">{row[5]}</td>
+                    </tr>
+                ))}
 
-                <div className="font-bold text-indigo-600">
-                  {item.total}
-                </div>
-              </div>
-            ))}
+                </tbody>
+            </table>
 
-            {/* Footer */}
-            <div className="flex justify-between items-center px-8 py-4 text-sm bg-slate-50">
-              <p className="text-slate-500">
-                Showing 1 to {fees.length} of {fees.length} universities
-              </p>
-
-              <div className="flex gap-2">
-                <button className="px-4 py-1 bg-white border rounded hover:bg-slate-100">
-                  Previous
-                </button>
-                <button className="px-4 py-1 bg-blue-600 text-white rounded">
-                  1
-                </button>
-                <button className="px-4 py-1 bg-white border rounded hover:bg-slate-100">
-                  Next
-                </button>
-              </div>
             </div>
-          </div>
-        </ScrollReveal>
 
-        {/* Note */}
-        <ScrollReveal delay={200}>
-          <div className="mt-10 bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded-lg">
-            <p className="text-sm text-slate-700">
-              <span className="font-semibold text-yellow-600">Note:</span>{" "}
-              Fees mentioned are approximate and subject to change.
-              Please contact us for the most updated fee structure
-              and scholarship opportunities.
+            {/* Note */}
+            <div className="mt-8 text-center text-sm text-slate-500">
+            <p>
+                <span className="font-medium text-slate-700">Note:</span> Fees are subject to change. 
+                Please verify with the respective colleges for the most updated information.
             </p>
-          </div>
-        </ScrollReveal>
+            </div>
 
-      </div>
-    </section>
-  );
-}
+        </div>
+      </section>
+
+
+      {/* MBBS Course Structure */}
+      <section className="py-20 bg-gradient-to-b from-green-50 to-white">
+        <div className="max-w-6xl mx-auto px-6">
+
+            <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-10 md:p-14">
+
+            {/* Heading */}
+            <div className="text-center mb-14">
+                <h2 className="text-3xl md:text-4xl font-bold text-green-700">
+                MBBS Course Structure in Bangladesh
+                </h2>
+                <div className="w-24 h-1 bg-red-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
+
+                {/* LEFT SIDE */}
+                <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-8">
+                    Phase-wise Curriculum
+                </h3>
+
+                <div className="space-y-6">
+
+                    <div className="bg-green-50 hover:bg-green-100 transition rounded-xl p-5 border border-green-100 shadow-sm">
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                        Phase I (1.5 Years)
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                        Anatomy, Physiology, Biochemistry, Community Medicine
+                    </p>
+                    </div>
+
+                    <div className="bg-green-50 hover:bg-green-100 transition rounded-xl p-5 border border-green-100 shadow-sm">
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                        Phase II (2 Years)
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                        Pathology, Pharmacology, Microbiology, Forensic Medicine
+                    </p>
+                    </div>
+
+                    <div className="bg-green-50 hover:bg-green-100 transition rounded-xl p-5 border border-green-100 shadow-sm">
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                        Phase III (2 Years)
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                        Medicine, Surgery, OB/GYN, Pediatrics & Specialties
+                    </p>
+                    </div>
+
+                </div>
+                </div>
+
+                {/* RIGHT SIDE */}
+                <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-8">
+                    Examination Pattern
+                </h3>
+
+                <div className="space-y-6">
+
+                    {[
+                    {
+                        title: "Professional Exams",
+                        desc: "Held after completion of each phase (3 total)"
+                    },
+                    {
+                        title: "Continuous Assessment",
+                        desc: "Regular tests, viva voce & practical exams"
+                    },
+                    {
+                        title: "Internship",
+                        desc: "1-year compulsory rotating internship"
+                    },
+                    {
+                        title: "FMGE Preparation",
+                        desc: "Special coaching support for Indian students"
+                    }
+                    ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded-full text-sm font-semibold">
+                        ✓
+                        </div>
+                        <div>
+                        <h4 className="font-semibold text-gray-900">
+                            {item.title}
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                            {item.desc}
+                        </p>
+                        </div>
+                    </div>
+                    ))}
+
+                </div>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+      </section>
