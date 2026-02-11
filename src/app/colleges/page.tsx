@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 "use client";
 
 import Image from "next/image";
-import { useState, useMemo, useEffect, Suspense } from "react";
+import { useState, useMemo, useEffect, } from "react";
 
 type College = {
   name: string;
@@ -182,9 +182,6 @@ function CollegesContent() {
 }
 
 export default function CollegesPage() {
-  return (
-    <Suspense fallback={<div className="p-20 text-center">Loading...</div>}>
+  return 
       <CollegesContent />
-    </Suspense>
-  );
 }
