@@ -112,7 +112,7 @@ export default function UniversityFees() {
         {/* Heading */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-extrabold text-slate-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
               University Fee Structure
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
@@ -141,7 +141,7 @@ export default function UniversityFees() {
             {fees.map((item, index) => (
               <div
                 key={index}
-                className="grid grid-cols-6 px-8 py-5 border-b hover:bg-blue-50 transition text-sm items-center"
+                className="grid grid-cols-1 grid grid-cols-2 grid grid-cols-3 px-8 py-5 border-b hover:bg-blue-50 transition text-sm items-center"
               >
                 <div>
                   <p className="font-semibold text-slate-800">
