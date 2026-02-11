@@ -44,7 +44,7 @@ export default function UniversityFees() {
       university: "SAGE University",
       state: "Madhya Pradesh",
       location: "Indore, MP",
-      course: "B.Tech AI",
+      course: "B.Tech",
       duration: "4 Years",
       annual: "₹1,10,000",
       total: "₹4,40,000",
