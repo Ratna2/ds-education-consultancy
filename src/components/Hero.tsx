@@ -8,11 +8,10 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white py-28">
 
-      {/* Background blobs */}
       <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-indigo-600/30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute top-40 -right-32 w-[520px] h-[520px] bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
 
-      <div className="container-custom grid md:grid-cols-1 grid md:grid-cols-2 grid md:grid-cols-3 gap-16 items-center">
+      <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
         <div>
@@ -33,9 +32,7 @@ export default function Hero() {
             and complete admission support from start to finish.
           </p>
 
-          {/* CTA */}
           <div className="mt-10 flex flex-wrap gap-5">
-
             <button
               onClick={() => router.push("/about")}
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl font-semibold shadow-xl transition hover:scale-105"
@@ -49,25 +46,21 @@ export default function Hero() {
             >
               Learn More
             </button>
-
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="flex justify-center">
           <div className="relative">
-
             <div className="absolute inset-0 rounded-full bg-indigo-500/30 blur-3xl"></div>
 
             <img
               src="/students.png"
               alt="Graduated Students"
-              className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full shadow-2xl floating-image"
+              className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover rounded-full shadow-2xl floating-image"
             />
-
           </div>
         </div>
-
       </div>
 
       <style jsx>{`
@@ -77,7 +70,7 @@ export default function Hero() {
 
         @keyframes float {
           0% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
+          50% { transform: translateY(-15pxi); }
           100% { transform: translateY(0px); }
         }
       `}</style>

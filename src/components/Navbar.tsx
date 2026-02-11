@@ -21,31 +21,28 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur shadow-xl">
-      <nav className="container-custom mx-auto flex items-center justify-between">
+      <nav className="w-full max-w-[1400px] mx-auto px-4 md:px-6 flex items-center justify-between">
 
         {/* Logo */}
         <div className="flex items-center gap-3">
-  
-            <img
-              src="/images/logo.png"
-              alt="DS Education Consultancy Logo"
-              className="h-12 w-auto object-contain"
-            />
+          <img
+            src="/images/logo.png"
+            alt="DS Education Consultancy Logo"
+            className="h-12 w-auto object-contain"
+          />
 
-            <div>
-              <h1 className="text-lg md:text-xl font-bold text-white leading-tight">
-                DS Education Consultancy
-              </h1>
-              <p className="text-xs text-gray-200 tracking-wide">
-                GRAB THE GREAT OPPORTUNITY
-              </p>
-            </div>
-
+          <div>
+            <h1 className="text-lg md:text-xl font-bold text-white leading-tight">
+              DS Education Consultancy
+            </h1>
+            <p className="text-xs text-gray-200 tracking-wide">
+              GRAB THE GREAT OPPORTUNITY
+            </p>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-8 font-medium items-center">
-
           <li>
             <Link href="/" className={linkClass("/")}>
               Home
@@ -58,20 +55,15 @@ export default function Navbar() {
             </Link>
           </li>
 
-          {/* Colleges Dropdown */}
           <li className="relative group">
-
             <button className="flex items-center gap-1 text-slate-200 hover:text-indigo-400 transition">
               Colleges ▾
             </button>
 
-            {/* Dropdown */}
             <div className="absolute left-0 top-8 w-64 opacity-0 invisible 
             translate-y-3 group-hover:opacity-100 group-hover:visible 
             group-hover:translate-y-0 transition-all duration-300">
-
               <div className="mt-4 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl p-5">
-
                 <ul className="flex flex-col gap-4 text-sm">
                   {collegeLinks.map((item, index) => (
                     <li key={index}>
@@ -84,10 +76,8 @@ export default function Navbar() {
                     </li>
                   ))}
                 </ul>
-
               </div>
             </div>
-
           </li>
 
           <li>
@@ -101,10 +91,8 @@ export default function Navbar() {
               Contact
             </Link>
           </li>
-
         </ul>
 
-        {/* Call Button */}
         <a
           href="tel:+918415029087"
           className="hidden md:flex items-center gap-3 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition"
@@ -117,20 +105,16 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-white text-2xl"
         >
           ☰
         </button>
-
       </nav>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-slate-900 px-6 pb-6 space-y-4 text-slate-200">
-
           <Link href="/" className="block" onClick={() => setOpen(false)}>
             Home
           </Link>
@@ -139,7 +123,6 @@ export default function Navbar() {
             About
           </Link>
 
-          {/* Mobile Colleges */}
           <div>
             <p className="text-indigo-400 font-semibold mb-2">
               Colleges
@@ -173,10 +156,8 @@ export default function Navbar() {
           >
             Call Now
           </a>
-
         </div>
       )}
-
     </header>
   );
 }
