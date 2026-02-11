@@ -309,7 +309,7 @@ export default function MBBSRussia() {
       {/* ================= TOP NMC UNIVERSITIES SECTION ================= */}
 
       <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Heading */}
             <div className="text-center mb-14">

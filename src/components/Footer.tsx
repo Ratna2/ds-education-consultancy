@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-200 py-12 mt-20">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div className="container-custom grid md:grid-cols-1 grid md:grid-cols-2 grid md:grid-cols-3 gap-8">
 
         {/* Company */}
         <div>

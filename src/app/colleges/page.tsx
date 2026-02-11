@@ -118,7 +118,7 @@ function CollegesContent() {
       {/* GRID */}
       <div
         key={active + page + search}
-        className="max-w-7xl mx-auto px-6 pb-20 grid md:grid-cols-3 gap-10 animate-fade"
+        className="container-custom grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade"
       >
         {paginated.map((college, i) => (
           <div

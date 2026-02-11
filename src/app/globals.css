@@ -309,3 +309,8 @@ input, textarea {
 .animate-scroll {
   animation: scroll 25s linear infinite;
 }
+@layer components {
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

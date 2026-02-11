@@ -107,7 +107,7 @@ export default function UniversityFees() {
 
   return (
     <section className="py-32 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container-custom">
 
         {/* Heading */}
         <ScrollReveal>

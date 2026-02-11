@@ -152,7 +152,7 @@ const calculateChance = () => {
 
       {/* ===== STATS STRIP ===== */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-6">
+        <div className="container-custom md:grid-cols-4 text-center gap-6">
           <div>
             <h3 className="text-3xl font-bold">500+</h3>
             <p className="text-sm opacity-80">Students Placed</p>
@@ -184,7 +184,7 @@ const calculateChance = () => {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+        <div className="container-custom grid md:grid-cols-3 gap-10">
 
           <Link href="/colleges">
             <div className="group relative h-[260px] rounded-2xl overflow-hidden shadow-xl cursor-pointer">
@@ -290,7 +290,7 @@ const calculateChance = () => {
     {/* ===== ADMISSION PROCESS SECTION ===== */}
     <section className="py-24 bg-slate-50">
 
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+        <div className="container-custom grid md:grid-cols-3 gap-10">
             
 
             {/* Eligibility */}

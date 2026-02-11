@@ -49,7 +49,7 @@ export default function StudyDestinations() {
 
   return (
     <section className="py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="container-custom text-center">
 
         {/* Heading */}
         <ScrollReveal>

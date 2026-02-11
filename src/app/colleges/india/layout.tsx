@@ -26,7 +26,7 @@ export default function IndiaLayout({
   return (
     <div className="bg-gradient-to-br from-slate-50 to-indigo-50 min-h-screen">
 
-      <div className="max-w-7xl mx-auto flex gap-8 px-6 py-12">
+      <div className="container-custom mx-auto flex gap-8">
 
         {/* Sidebar */}
         <aside className="w-72 shrink-0">

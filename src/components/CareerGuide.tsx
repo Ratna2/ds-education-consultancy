@@ -54,7 +54,7 @@ export default function CareerRoadmap() {
 
   return (
     <section className="py-32 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="container-custom text-center">
 
         {/* Heading */}
         <h2 className="text-5xl font-extrabold mb-6">

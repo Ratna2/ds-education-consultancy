@@ -194,7 +194,7 @@ export default function MBBSBangladesh() {
 
 
       {/* ================= WHY CHOOSE BANGLADESH ================= */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
+      <section className="container-custom">
 
         <h2 className="text-4xl font-bold text-[#006A4E] mb-12 text-center">
           Why Choose Bangladesh for MBBS?
@@ -228,7 +228,7 @@ export default function MBBSBangladesh() {
       {/* ================= MBBS IN BANGLADESH CONTENT ================= */}
       <section className="py-20 bg-slate-50">
 
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="container-custom grid md:grid-cols-2 gap-12 items-center">
 
           <div>
             <h2 className="text-3xl font-bold text-[#006A4E] mb-6">
@@ -464,7 +464,7 @@ export default function MBBSBangladesh() {
 
       {/* ================= FEE STRUCTURE ================= */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Heading */}
             <div className="text-center mb-12">

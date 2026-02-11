@@ -310,7 +310,7 @@ export default function MBBSRussia() {
       {/* ================= TOP NMC UNIVERSITIES SECTION ================= */}
 
       <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Heading */}
             <div className="text-center mb-14">
@@ -518,7 +518,7 @@ export default function MBBSRussia() {
       {/* ================= MBBS RUSSIA FEE STRUCTURE ================= */}
 
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Section Heading */}
             <div className="text-center mb-14">
@@ -617,7 +617,7 @@ export default function MBBSRussia() {
       {/* ================= TOP UNIVERSITY FEE COMPARISON ================= */}
 
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Section Heading */}
             <div className="text-center mb-12">
@@ -692,7 +692,7 @@ export default function MBBSRussia() {
       {/* ================= SCHOLARSHIP OPPORTUNITIES ================= */}
 
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Heading */}
             <div className="text-center mb-14">
@@ -770,7 +770,7 @@ export default function MBBSRussia() {
       {/* ================= CAREER AFTER MBBS ================= */}
 
       <section className="py-24 bg-gradient-to-b from-white via-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-custom">
 
             {/* Heading */}
             <div className="text-center mb-16">

@@ -23,7 +23,7 @@ export default function AdmissionProcess() {
     <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-950 text-white">
       <div
         ref={ref}
-        className={`max-w-7xl mx-auto px-6 transition-all duration-700 ${
+        className={`container-custom transition-all duration-700 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
       >

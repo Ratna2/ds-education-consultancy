@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute -top-32 -left-32 w-[520px] h-[520px] bg-indigo-600/30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute top-40 -right-32 w-[520px] h-[520px] bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div className="container-custom grid md:grid-cols-1 grid md:grid-cols-2 grid md:grid-cols-3 gap-16 items-center">
 
         {/* LEFT CONTENT */}
         <div>

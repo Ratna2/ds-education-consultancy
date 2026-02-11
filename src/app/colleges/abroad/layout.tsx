@@ -44,7 +44,7 @@ export default function AbroadLayout({
 
       {/* ===== PAGE HEADER BAR ===== */}
       <div className="bg-white shadow-sm border-b sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="container-custom flex justify-between items-center flex-wrap gap-3">
 
           {/* Title */}
           <h1 className="text-xl font-bold text-slate-800">

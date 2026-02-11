@@ -60,7 +60,7 @@ export default function FeaturedTopColleges() {
 
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="container-custom text-center">
 
         <h2 className="text-4xl font-bold text-slate-900 mb-4">
           Featured Top Colleges
