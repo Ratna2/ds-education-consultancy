@@ -21,7 +21,7 @@ export default function FloatingContact() {
           </a>
 
           <a
-            href="tel:+918415029087"
+            href="tel:+919366294006"
             className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition"
           >
             📞 Call Now

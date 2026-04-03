@@ -3,19 +3,18 @@
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 type College = {
   name: string;
   category: string;
   image: string;
-  state: string; // ✅ NEW FIELD
+  state: string;
   featured?: boolean;
 };
 
-/* ✅ UPDATED DATA WITH STATES */
 const colleges: College[] = [
-  // 🎓 Engineering
+  // (your same data — unchanged)
   { name: "IEM", category: "Engineering", image: "/IEM.jpg", state: "West Bengal", featured: true },
   { name: "SRM Chennai", category: "Engineering", image: "/SRM.jpeg", state: "Tamil Nadu" },
   { name: "Ramaiah Institute of Technology", category: "Engineering", image: "/RAMAIAH.jpg", state: "Karnataka" },
@@ -25,7 +24,6 @@ const colleges: College[] = [
   { name: "Jain University", category: "Engineering", image: "/JAIN.jpg", state: "Karnataka" },
   { name: "Dayananda Sagar", category: "Engineering", image: "/DAYANAND.jpg", state: "Karnataka" },
 
-  // 🏥 Medical
   { name: "IQ City Medical College, Kolkata", category: "Medical", image: "/IQ.jpg", state: "West Bengal", featured: true },
   { name: "Jagannath Gupta Medical College, Kolkata", category: "Medical", image: "/JAGANNATH.jpeg", state: "West Bengal" },
   { name: "ICARE Medical College", category: "Medical", image: "/ICARE.webp", state: "West Bengal" },
@@ -33,7 +31,6 @@ const colleges: College[] = [
   { name: "MS Ramaiah Medical College", category: "Medical", image: "/MSRAMAIAH.jpg", state: "Karnataka" },
   { name: "Shree Lakshmi Narayana Medical College", category: "Medical", image: "/SHRILAKSHMI.webp", state: "Puducherry" },
 
-  // 💼 Management
   { name: "Symbiosis", category: "Management", image: "/SYMB.avif", state: "Maharashtra", featured: true },
   { name: "Christ University", category: "Management", image: "/CHRIST.jpg", state: "Karnataka" },
   { name: "Nitte School of Management", category: "Management", image: "/NITTE.jpeg", state: "Karnataka" },
@@ -41,7 +38,6 @@ const colleges: College[] = [
   { name: "Dayananda Sagar", category: "Management", image: "/DAYANAND.jpg", state: "Karnataka" },
   { name: "Acharya Institute", category: "Management", image: "/ACHAR.webp", state: "Karnataka" },
 
-  // ⚖ Law
   { name: "IEM", category: "Law", image: "/IEM.jpg", state: "West Bengal", featured: true },
   { name: "Adamas University", category: "Law", image: "/ADAM.jpg", state: "West Bengal" },
   { name: "Sister Nivedita University", category: "Law", image: "/SISTERS.avif", state: "West Bengal" },
@@ -49,7 +45,6 @@ const colleges: College[] = [
   { name: "Jain University", category: "Law", image: "/JAIN.jpg", state: "Karnataka" },
   { name: "Dayananda Sagar", category: "Law", image: "/DAYANAND.jpg", state: "Karnataka" },
 
-  // 💊 Pharmacy
   { name: "Acharya College of Pharmacy", category: "Pharmacy", image: "/ACHARIA.png", state: "Karnataka", featured: true },
   { name: "East Point College of Pharmacy", category: "Pharmacy", image: "/EAST.jpg", state: "Karnataka" },
   { name: "MVM College of Pharmacy", category: "Pharmacy", image: "/MVM.jpg", state: "Karnataka" },
@@ -63,6 +58,11 @@ function CollegesContent() {
   const [active, setActive] = useState("All");
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+
+  /* ✅ AUTO SCROLL TO TOP */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page, active]);
 
   const filtered = useMemo(() => {
     let result =
@@ -104,7 +104,6 @@ function CollegesContent() {
             Showing: <span className="font-semibold">{active}</span> Colleges
           </p>
 
-          {/* SEARCH */}
           <div className="max-w-xl mx-auto mt-8">
             <input
               type="text"
@@ -120,37 +119,33 @@ function CollegesContent() {
         </div>
       </section>
 
-      {/* FILTER */}
-      <div className="sticky top-20 z-10 flex justify-center gap-4 pb-10 bg-white/80 backdrop-blur-md flex-wrap">
-        {["All", "Engineering", "Medical", "Pharmacy", "Law", "Management"].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => {
-              setActive(cat);
-              setPage(1);
-            }}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
-              ${
-                active === cat
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg"
-                  : "bg-blue-50 text-blue-600 hover:bg-blue-100"
-              }`}
-          >
-            {cat}
-          </button>
-        ))}
+      {/* ✅ FIXED FILTER BAR */}
+      <div className="sticky top-20 z-10 bg-white/90 backdrop-blur-md py-4">
+        <div className="flex gap-3 overflow-x-auto px-4 no-scrollbar justify-start md:justify-center">
+          {["All", "Engineering", "Medical", "Pharmacy", "Law", "Management"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => {
+                setActive(cat);
+                setPage(1);
+              }}
+              className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition
+                ${
+                  active === cat
+                    ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow"
+                    : "bg-blue-50 text-blue-600 hover:bg-blue-100"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* GRID */}
-      <div
-        key={active + page + search}
-        className="container-custom grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeIn"
-      >
+      <div className="container-custom grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fadeIn">
         {paginated.map((college, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 relative group"
-          >
+          <div key={i} className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition relative group">
             {college.featured && (
               <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-xs px-3 py-1 rounded-full font-semibold shadow z-10">
                 ⭐ Featured
@@ -162,7 +157,7 @@ function CollegesContent() {
                 src={college.image}
                 alt={college.name}
                 fill
-                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
 
@@ -171,7 +166,6 @@ function CollegesContent() {
                 {college.name}
               </h3>
 
-              {/* ✅ NEW STATE UI */}
               <p className="text-sm text-slate-500 mb-4">
                 📍 {college.state}
               </p>
