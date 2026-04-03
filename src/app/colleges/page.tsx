@@ -17,7 +17,7 @@ type College = {
 const colleges: College[] = [
   // 🎓 Engineering
   { name: "IEM", category: "Engineering", image: "/IEM.jpg", state: "West Bengal", featured: true },
-  { name: "SRM Chennai", category: "Engineering", image: "/SRM.jpg", state: "Tamil Nadu" },
+  { name: "SRM Chennai", category: "Engineering", image: "/SRM.jpeg", state: "Tamil Nadu" },
   { name: "Ramaiah Institute of Technology", category: "Engineering", image: "/RAMAIAH.jpg", state: "Karnataka" },
   { name: "NMIMS", category: "Engineering", image: "/NMIMS.jpg", state: "Maharashtra" },
   { name: "KIIT", category: "Engineering", image: "/KIIT.jpg", state: "Odisha" },
