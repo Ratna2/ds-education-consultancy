@@ -39,7 +39,7 @@ export default function Footer() {
             Flyover Pillar No. 12, Tripura, India
           </p>
           <p className="text-sm mt-2">
-            📞 Phone: +91 8415029087
+            📞 Phone: +91 9366294006
           </p>
           <p className="text-sm">
             💬 WhatsApp: 9366294006

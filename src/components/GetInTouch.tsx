@@ -23,7 +23,7 @@ export default function GetInTouch() {
             <div>
               <h4 className="font-semibold">📞 Phone</h4>
               <p className="text-slate-700">
-                +91 8415029087
+                +91 9366294006
               </p>
             </div>
 

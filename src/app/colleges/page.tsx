@@ -1,40 +1,65 @@
-
 "use client";
 
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
-import { useState, useMemo, useEffect, } from "react";
+import { useState, useMemo } from "react";
 
 type College = {
   name: string;
   category: string;
   image: string;
+  state: string; // ✅ NEW FIELD
   featured?: boolean;
 };
 
+/* ✅ UPDATED DATA WITH STATES */
 const colleges: College[] = [
-  { name: "Uttaranchal University, Dehradun", category: "Law", image: "/uttaranchal.jpg", featured: true },
-  { name: "SAGE University, Bhopal", category: "Law", image: "/sage.jpg" },
-  { name: "Adamas University, Kolkata", category: "Law", image: "/adamas.jpg" },
+  // 🎓 Engineering
+  { name: "IEM", category: "Engineering", image: "/IEM.jpg", state: "West Bengal", featured: true },
+  { name: "SRM Chennai", category: "Engineering", image: "/SRM.jpg", state: "Tamil Nadu" },
+  { name: "Ramaiah Institute of Technology", category: "Engineering", image: "/RAMAIAH.jpg", state: "Karnataka" },
+  { name: "NMIMS", category: "Engineering", image: "/NMIMS.jpg", state: "Maharashtra" },
+  { name: "KIIT", category: "Engineering", image: "/KIIT.jpg", state: "Odisha" },
+  { name: "Siksha ‘O’ Anusandhan", category: "Engineering", image: "/SHIKSHA.webp", state: "Odisha" },
+  { name: "Jain University", category: "Engineering", image: "/JAIN.jpg", state: "Karnataka" },
+  { name: "Dayananda Sagar", category: "Engineering", image: "/DAYANAND.jpg", state: "Karnataka" },
 
-  { name: "SRM University, Delhi", category: "Medical", image: "/srm.jpg", featured: true },
-  { name: "East Point College Of Medical Sciences", category: "Medical", image: "/eastpoint.jpg" },
-  { name: "Kalinga Institute Of Medical Sciences", category: "Medical", image: "/kalinga.jpg" },
+  // 🏥 Medical
+  { name: "IQ City Medical College, Kolkata", category: "Medical", image: "/IQ.jpg", state: "West Bengal", featured: true },
+  { name: "Jagannath Gupta Medical College, Kolkata", category: "Medical", image: "/JAGANNATH.jpeg", state: "West Bengal" },
+  { name: "ICARE Medical College", category: "Medical", image: "/ICARE.webp", state: "West Bengal" },
+  { name: "Gouri Devi Medical College", category: "Medical", image: "/GOURI.webp", state: "West Bengal" },
+  { name: "MS Ramaiah Medical College", category: "Medical", image: "/MSRAMAIAH.jpg", state: "Karnataka" },
+  { name: "Shree Lakshmi Narayana Medical College", category: "Medical", image: "/SHRILAKSHMI.webp", state: "Puducherry" },
 
-  { name: "Indo Global Group Of Colleges Punjab", category: "Management", image: "/indoglobal.jpg" },
-  { name: "UPES University, Dehradun", category: "Management", image: "/upes.jpg", featured: true },
-  { name: "MIT World Peace University", category: "Management", image: "/mit.jpg" },
+  // 💼 Management
+  { name: "Symbiosis", category: "Management", image: "/SYMB.avif", state: "Maharashtra", featured: true },
+  { name: "Christ University", category: "Management", image: "/CHRIST.jpg", state: "Karnataka" },
+  { name: "Nitte School of Management", category: "Management", image: "/NITTE.jpeg", state: "Karnataka" },
+  { name: "Ramaiah Institute", category: "Management", image: "/RAMAIAH.jpg", state: "Karnataka" },
+  { name: "Dayananda Sagar", category: "Management", image: "/DAYANAND.jpg", state: "Karnataka" },
+  { name: "Acharya Institute", category: "Management", image: "/ACHAR.webp", state: "Karnataka" },
 
-  { name: "Roorkee College Of Engineering", category: "Engineering", image: "/roorkee.jpg" },
-  { name: "Brainware University, Kolkata", category: "Engineering", image: "/brainware.jpg" },
-  { name: "Graphic Era Hill University", category: "Engineering", image: "/graphicera.jpg", featured: true },
+  // ⚖ Law
+  { name: "IEM", category: "Law", image: "/IEM.jpg", state: "West Bengal", featured: true },
+  { name: "Adamas University", category: "Law", image: "/ADAM.jpg", state: "West Bengal" },
+  { name: "Sister Nivedita University", category: "Law", image: "/SISTERS.avif", state: "West Bengal" },
+  { name: "Ramaiah Institute", category: "Law", image: "/RAMAIAH.jpg", state: "Karnataka" },
+  { name: "Jain University", category: "Law", image: "/JAIN.jpg", state: "Karnataka" },
+  { name: "Dayananda Sagar", category: "Law", image: "/DAYANAND.jpg", state: "Karnataka" },
+
+  // 💊 Pharmacy
+  { name: "Acharya College of Pharmacy", category: "Pharmacy", image: "/ACHARIA.png", state: "Karnataka", featured: true },
+  { name: "East Point College of Pharmacy", category: "Pharmacy", image: "/EAST.jpg", state: "Karnataka" },
+  { name: "MVM College of Pharmacy", category: "Pharmacy", image: "/MVM.jpg", state: "Karnataka" },
+  { name: "Karnataka College of Pharmacy", category: "Pharmacy", image: "/KARNATAKA.avif", state: "Karnataka" },
+  { name: "Nargund College of Pharmacy", category: "Pharmacy", image: "/NARGUNDA.webp", state: "Karnataka" },
 ];
 
 const ITEMS_PER_PAGE = 6;
 
 function CollegesContent() {
-
   const [active, setActive] = useState("All");
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -96,8 +121,8 @@ function CollegesContent() {
       </section>
 
       {/* FILTER */}
-      <div className="sticky top-20 z-10 flex justify-center gap-4 pb-10 bg-white/80 backdrop-blur-md">
-        {["All", "Law", "Medical", "Management", "Engineering"].map((cat) => (
+      <div className="sticky top-20 z-10 flex justify-center gap-4 pb-10 bg-white/80 backdrop-blur-md flex-wrap">
+        {["All", "Engineering", "Medical", "Pharmacy", "Law", "Management"].map((cat) => (
           <button
             key={cat}
             onClick={() => {
@@ -142,9 +167,14 @@ function CollegesContent() {
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold text-lg text-slate-800 mb-4">
+              <h3 className="font-semibold text-lg text-slate-800">
                 {college.name}
               </h3>
+
+              {/* ✅ NEW STATE UI */}
+              <p className="text-sm text-slate-500 mb-4">
+                📍 {college.state}
+              </p>
 
               <button
                 onClick={() => window.location.href = "/contact"}
@@ -176,14 +206,10 @@ function CollegesContent() {
           ))}
         </div>
       )}
-
-    
     </div>
   );
 }
 
 export default function CollegesPage() {
-  return (
-      <CollegesContent />
-  );
+  return <CollegesContent />;
 }

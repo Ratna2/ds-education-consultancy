@@ -7,7 +7,7 @@ export default function TopBar() {
           <span>🎓 Admissions Open for All Colleges</span>
 
           <a href="tel:+918415029087" className="hover:underline">
-            📞 Helpline: +91 8415029087
+            📞 Helpline: +91 9366294006
           </a>
 
           <a

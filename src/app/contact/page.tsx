@@ -44,7 +44,7 @@ export default function ContactPage() {
               href="tel:+918415029087"
               className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2 rounded-md hover:opacity-90 transition"
             >
-              +91 8415029087
+              +91 9366294006
             </a>
           </div>
 

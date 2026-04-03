@@ -13,12 +13,6 @@ export default function Navbar() {
       pathname === path ? "text-indigo-400" : "text-slate-200"
     }`;
 
-  const collegeLinks = [
-    { name: "College Info", link: "/colleges" },
-    { name: "India", link: "/colleges/india" },
-    { name: "Abroad", link: "/colleges/abroad" },
-  ];
-
   return (
     <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur shadow-xl">
       <nav className="w-full max-w-[1400px] mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -55,29 +49,11 @@ export default function Navbar() {
             </Link>
           </li>
 
-          <li className="relative group">
-            <button className="flex items-center gap-1 text-slate-200 hover:text-indigo-400 transition">
-              Colleges ▾
-            </button>
-
-            <div className="absolute left-0 top-8 w-64 opacity-0 invisible 
-            translate-y-3 group-hover:opacity-100 group-hover:visible 
-            group-hover:translate-y-0 transition-all duration-300">
-              <div className="mt-4 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl p-5">
-                <ul className="flex flex-col gap-4 text-sm">
-                  {collegeLinks.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        href={item.link}
-                        className="block text-slate-200 hover:text-indigo-400 transition"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          {/* ✅ UPDATED: Direct Colleges Link */}
+          <li>
+            <Link href="/colleges" className={linkClass("/colleges")}>
+              Colleges
+            </Link>
           </li>
 
           <li>
@@ -93,18 +69,20 @@ export default function Navbar() {
           </li>
         </ul>
 
+        {/* Call Button */}
         <a
-          href="tel:+918415029087"
+          href="tel:+919366294006"
           className="hidden md:flex items-center gap-3 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition"
         >
           <span className="w-9 h-9 flex items-center justify-center rounded-full bg-white text-green-600 animate-bounce">
             📞
           </span>
           <span className="font-semibold">
-            +91 8415029087
+            +91 9366294006
           </span>
         </a>
 
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-white text-2xl"
@@ -113,6 +91,7 @@ export default function Navbar() {
         </button>
       </nav>
 
+      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-slate-900 px-6 pb-6 space-y-4 text-slate-200">
           <Link href="/" className="block" onClick={() => setOpen(false)}>
@@ -123,24 +102,10 @@ export default function Navbar() {
             About
           </Link>
 
-          <div>
-            <p className="text-indigo-400 font-semibold mb-2">
-              Colleges
-            </p>
-
-            <div className="pl-4 space-y-2">
-              {collegeLinks.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className="block"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
+          {/* ✅ UPDATED: Direct Colleges Link */}
+          <Link href="/colleges" className="block" onClick={() => setOpen(false)}>
+            Colleges
+          </Link>
 
           <Link href="/blogs" className="block" onClick={() => setOpen(false)}>
             Blogs
@@ -151,7 +116,7 @@ export default function Navbar() {
           </Link>
 
           <a
-            href="tel:+918415029087"
+            href="tel:+919366294006"
             className="block bg-green-500 text-center py-2 rounded-lg"
           >
             Call Now
