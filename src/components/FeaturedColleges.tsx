@@ -1,36 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-const colleges = [
-  {
-    name: "Uttaranchal University",
-    location1: "UK",
-    location2: "Dehradun",
-    image: "/Uttaranchal.jpg",
-  },
-  {
-    name: "UPES University",
-    location1: "UK",
-    location2: "Dehradun",
-    image: "/upes.jpg",
-  },
-  {
-    name: "Roorkee College Of Engineering",
-    location1: "Uttarakhand",
-    location2: "Roorkee",
-    image: "/roorkee.jpg",
-  },
-  {
-    name: "SRM University",
-    location1: "Delhi NCR",
-    location2: "Ghaziabad",
-    image: "/srm.jpg",
-  },
-];
+import { useEffect, useRef, useMemo } from "react";
+import { collegesData } from "@/data/collegesData";
 
 export default function FeaturedTopColleges() {
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  /* ✅ GET ONLY FEATURED COLLEGES */
+  const featuredColleges = useMemo(() => {
+    return collegesData.filter((c) => c.featured);
+  }, []);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -38,18 +17,16 @@ export default function FeaturedTopColleges() {
 
     let animationFrame: number;
     let position = 0;
-
-    const speed = 0.5; // LOWER = slower (smooth premium speed)
+    const speed = 0.5;
 
     const animate = () => {
       position -= speed;
 
       if (Math.abs(position) >= slider.scrollWidth / 2) {
-        position = 0; // reset smoothly without visual snap
+        position = 0;
       }
 
       slider.style.transform = `translateX(${position}px)`;
-
       animationFrame = requestAnimationFrame(animate);
     };
 
@@ -67,7 +44,7 @@ export default function FeaturedTopColleges() {
         </h2>
 
         <p className="text-slate-500 mb-12">
-          Discover premier institutions in India and abroad recommended by LookStudents
+          Discover premier institutions recommended for your future
         </p>
 
         <div className="overflow-hidden">
@@ -76,11 +53,9 @@ export default function FeaturedTopColleges() {
             className="flex gap-6"
             style={{ width: "max-content" }}
           >
-            {[...colleges, ...colleges].map((college, i) => (
-              <div
-                key={i}
-                className="w-[350px] flex-shrink-0"
-              >
+            {[...featuredColleges, ...featuredColleges].map((college, i) => (
+              <div key={i} className="w-[350px] flex-shrink-0">
+
                 <div className="relative rounded-2xl overflow-hidden shadow-xl group">
 
                   <img
@@ -97,20 +72,18 @@ export default function FeaturedTopColleges() {
                     </h3>
 
                     <div className="flex gap-3">
-                      {college.location1 && (
-                        <span className="bg-blue-600/80 backdrop-blur px-3 py-1 rounded-full text-sm">
-                          {college.location1}
-                        </span>
-                      )}
-                      {college.location2 && (
-                        <span className="bg-white/20 backdrop-blur px-3 py-1 rounded-full text-sm">
-                          {college.location2}
-                        </span>
-                      )}
+                      <span className="bg-blue-600/80 backdrop-blur px-3 py-1 rounded-full text-sm">
+                        {college.category}
+                      </span>
+
+                      <span className="bg-white/20 backdrop-blur px-3 py-1 rounded-full text-sm">
+                        {college.state}
+                      </span>
                     </div>
                   </div>
 
                 </div>
+
               </div>
             ))}
           </div>
